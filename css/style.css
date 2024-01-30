@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.5;
+    margin: 40px 80px;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+p {
+    color: black;
+    font-size: 1rem;
+}
+
+h1 {
+    margin-bottom: 50px;
+}
+
+/* Navigation */
+
+.homeNav {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 300px;
+}
+
+.homeNav a {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    font-size: 1.4rem;
+    background-color: #f4efe6;
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 4px 7px #686867;
+    transition: .2s;
+}
+
+.homeNav a:hover {
+    transform: scale(1.1);
+    transition: .2s;
+}
+
+nav {
+    display: flex;
+    justify-content: start;
+    margin: 50px 0;
+    font-size: 1.2rem;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    list-style: none;
+    justify-content: space-around;
+}
+
+nav a {
+    padding-bottom: 5px;
+}
+
+nav a:hover {
+    border-bottom: 1px solid black;
+}
+
+/* Kategorier */
+
+.categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
+    text-align: center;
+}
+
+.categories a {
+    background-color: #f4efe6;
+    padding: 40px 5px;
+    font-size: 1.2em;
+    border-radius: 3px;
+    transition: .2s;
+}
+
+.categories a:hover {
+    transform: scale(1.03);
+    transition: .2s;
+}
+
+
+/* Prouktlist items */
+
+.productlist {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 290px));
+    gap: 2rem;
+}
+
+.productCard {
+    display: flex;
+    flex-direction: column;
+}
+
+.productCard p {
+    margin: 3px 0;
+}
+
+.productCard p:nth-of-type(1) {
+    color: grey;
+    padding-top: 8px;
+}
+
+.productCard p:nth-of-type(2) {
+    font-size: 1.2rem;
+}
+
+/* On sale */
+
+.newPrice {
+    color: red;
+}
+
+.originalPrice {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.priceChange {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/* ----- */
+
+.saleImg {
+    position: relative;
+}
+.saleBadge {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: red;
+    padding: 3px 7px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Produkt */
+
+.productInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+}
