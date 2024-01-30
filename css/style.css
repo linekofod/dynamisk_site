@@ -28,18 +28,42 @@ p {
 
 h1 {
     margin-bottom: 50px;
+    font-size: 3em;
 }
 
 /* Navigation */
 
+/* Home navigation*/
+
+.bodyHome {
+    margin: 0;
+}
+
 .homeNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.homeNav h1 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 6em;
+    text-align: center;
+}
+.homeNav h1 span {
+    font-weight: 400;
+}
+
+.menu {
     display: flex;
     flex-direction: row;
     gap: 50px;
-    margin-top: 300px;
+    margin-top: 50px;
+    justify-content: center;
 }
-
-.homeNav a {
+.menu a {
     display: flex;
     list-style: none;
     text-decoration: none;
@@ -50,19 +74,34 @@ h1 {
     box-shadow: 4px 7px #686867;
     transition: .2s;
 }
-
-.homeNav a:hover {
+.menu a:hover {
     transform: scale(1.1);
     transition: .2s;
 }
 
-nav {
+/* Main navigation */
+
+.mainNav {
     display: flex;
-    justify-content: start;
-    margin: 50px 0;
-    font-size: 1.2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 70px 0;
+}
+.mainNav h1 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 2em;
+}
+.mainNav h1 span {
+    font-weight: 400;
 }
 
+nav {
+    display: flex;
+    justify-content: end;
+    font-size: 1.2rem;
+}
 nav ul {
     display: flex;
     flex-direction: row;
@@ -70,21 +109,18 @@ nav ul {
     margin: 0;
     padding: 0;
 }
-
 nav li {
     list-style: none;
     justify-content: space-around;
 }
-
 nav a {
     padding-bottom: 5px;
 }
-
 nav a:hover {
     border-bottom: 1px solid black;
 }
 
-/* Kategorier */
+/* Kategori siden */
 
 .categories {
     display: grid;
@@ -106,8 +142,7 @@ nav a:hover {
     transition: .2s;
 }
 
-
-/* Prouktlist items */
+/* Prouktlist siden */
 
 .productlist {
     display: grid;
@@ -119,17 +154,16 @@ nav a:hover {
     display: flex;
     flex-direction: column;
 }
-
 .productCard p {
     margin: 3px 0;
 }
 
-.productCard p:nth-of-type(1) {
+.productlistBrand {
     color: grey;
     padding-top: 8px;
 }
 
-.productCard p:nth-of-type(2) {
+.productlistName {
     font-size: 1.2rem;
 }
 
@@ -150,8 +184,6 @@ nav a:hover {
     gap: 10px;
 }
 
-/* ----- */
-
 .saleImg {
     position: relative;
 }
@@ -165,10 +197,133 @@ nav a:hover {
     font-family: 'Times New Roman', Times, serif;
 }
 
-/* Produkt */
+/* Sold out */
 
-.productInfo {
+.soldoutImg {
+    position: relative;
+}
+.lowOpacity {
+    opacity: 0.5;
+}
+.soldoutBadge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: grey;
+    padding: 3px 7px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Produkt siden */
+
+.product {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2em;
+    gap: 4em;
 }
+
+/* Breadcrumbs */
+
+.breadcrumbs {
+    display: flex;
+    list-style-type: none;
+    padding: 0 0 10px 0;
+}
+
+.breadcrumbs a {
+    padding-bottom: 1px;
+    border-bottom: 1px solid #686867;
+}
+
+.breadcrumbs a:hover {
+    border-bottom: 2px solid #686867;
+}
+
+.breadcrumbs li::after {
+    content: " > ";
+    font-size: 0.8rem;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 10px;
+}
+.breadcrumbs li:last-child::after {
+    content: "";
+}
+
+/* Info om produkt */
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+}
+.productBrand {
+    font-size: 1.2em;
+    color: grey;
+    margin: 0;
+}
+.productName {
+    font-size: 2em;
+    margin: 7px 0;
+}
+.productPrice {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+/* Produkt farve */
+
+.productColor {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 20px;
+}
+.productColor p {
+    font-size: 1.1em;
+}
+.colorImg {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    max-width: 10%;
+}
+.colorImg img:hover{
+    border: 1px solid #686867;
+    cursor: pointer;
+}
+
+/* Produkt størrelse */
+
+.productSize {
+    margin-top: 10px;
+}
+
+.productSize p {
+    font-size: 1.1em;
+}
+
+select {
+    padding: 8px;
+    cursor: pointer;
+}
+
+/* Tilføj produktet */
+
+.addProduct {
+    color: black;
+    background-color: #f4efe6;
+    width: fit-content;
+    padding: 14px 150px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: .2s;
+}
+
+.addProduct:hover {
+    transform: scale(1.03);
+    transition: .2s;
+}
+
