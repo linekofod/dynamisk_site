@@ -30,6 +30,7 @@ function showProducts(productJSON) {
       console.log("Product", product);
       productClone = productTemplate.cloneNode(true).content;
       productClone.querySelector(".productlistName").textContent = product.productdisplayname;
+      productClone.querySelector(".originalPrice").textContent = product.price;
     //   beerClone.querySelector(".beer_image").src = beer.image_url;
     //   beerClone.querySelector(".beer_image").alt = `Picture of a ${beer.name} beer`;
     //   beerClone.querySelector(".beer_tagline").textContent = beer.tagline;
