@@ -21,114 +21,27 @@
     </header>
     <main>
       <h1>Puma</h1>
-      <section class="productlist">
-        <a class="productCard" href="produkt.html">
-          <img
-            src="https://kea-alt-del.dk/t7/images/webp/640/1532.webp"
-            alt=""
-          />
-          <p class="productlistBrand">Puma</p>
-          <p class="productlistName">Grey Leaping Cat T-shirt</p>
-          <p>899 DKK</p>
-        </a>
-
-        <a class="productCard onSale" href="produkt.html">
-          <div class="saleImg">
-            <img
-              src="https://kea-alt-del.dk/t7/images/webp/640/1525.webp"
-              alt=""
-            />
-            <div class="saleBadge">-55%</div>
-          </div>
-          <p class="productlistBrand">Puma</p>
-          <p class="productlistName">Deck Navy Blue Backpack</p>
-          <div class="priceChange">
-            <p class="newPrice">584 DKK</p>
-            <p class="originalPrice">1299 DKK</p>
-          </div>
-        </a>
-
-        <a class="productCard soldOut" href="produkt.html">
-          <div class="soldoutImg">
-            <div class="lowOpacity">
-              <img
-                src="https://kea-alt-del.dk/t7/images/webp/640/1536.webp"
-                alt=""
-              />
-            </div>
-            <div class="soldoutBadge">Sold Out</div>
-          </div>
-          <p class="productlistBrand">Puma</p>
-          <p class="productlistName">Black Net Jersey</p>
-          <p>1299 DKK</p>
-        </a>
-
-        <a class="productCard" href="produkt.html">
-          <img
-            src="https://kea-alt-del.dk/t7/images/webp/640/1549.webp"
-            alt=""
-          />
-          <p class="productlistBrand">Puma</p>
-          <p class="productlistName">Jiyu Slip On Sneaker</p>
-          <p>3299 DKK</p>
-        </a>
-
-        <a class="productCard" href="produkt.html">
-          <img
-            src="https://kea-alt-del.dk/t7/images/webp/640/1526.webp"
-            alt=""
-          />
-          <p class="productlistBrand">Puma</p>
-          <p class="productlistName">Big Cat Backpack Black</p>
-          <p>1299 DKK</p>
-        </a>
-
-        <a class="productCard onSale soldOut" href="produkt.html">
-          <div class="soldoutImg">
-            <div class="lowOpacity">
-              <img
-                src="https://kea-alt-del.dk/t7/images/webp/640/1542.webp"
-                alt=""
-              />
-            </div>
-            <div class="soldoutBadge">Sold Out</div>
-            <div class="saleBadge">-31%</div>
-          </div>
-          <p class="productlistBrand">Puma</p>
-          <p class="productlistName">Ballistic Rubber Shoe</p>
-          <div class="priceChange">
-            <p class="newPrice">2414 DKK</p>
-            <p class="originalPrice">3499 DKK</p>
-          </div>
-        </a>
-
-        <a class="productCard" href="produkt.html">
-          <img
-            src="https://kea-alt-del.dk/t7/images/webp/640/1553.webp"
-            alt=""
-          />
-          <p class="productlistBrand">Puma</p>
-          <p class="productlistName">Power Cat Hard Ground Football</p>
-          <p>999 DKK</p>
-        </a>
-
-        <a class="productCard onSale" href="produkt.html">
-          <div class="saleImg">
-            <img
-              src="https://kea-alt-del.dk/t7/images/webp/640/1528.webp"
-              alt=""
-            />
-            <div class="saleBadge">-49%</div>
-          </div>
-          <p class="productlistBrand">Puma</p>
-          <p class="productlistName">Black Fleece Jacket</p>
-          <div class="priceChange">
-            <p class="newPrice">2039 DKK</p>
-            <p class="originalPrice">3999 DKK</p>
-          </div>
-        </a>
-      </section>
+      <section class="productList"></section>
     </main>
     <footer></footer>
+    <script src="js/script.js"></script>
   </body>
 </html>
+
+<template class="productTemplate">
+  <article class="productCard onSale soldOut" href="produkt.html">
+    <div class="soldoutImg">
+      <div class="lowOpacity">
+        <img src="https://kea-alt-del.dk/t7/images/webp/640/1542.webp" alt="" />
+      </div>
+      <div class="soldoutBadge">Sold Out</div>
+      <div class="saleBadge">-31%</div>
+    </div>
+    <p class="productlistBrand">Puma</p>
+    <p class="productlistName">Ballistic Rubber Shoe</p>
+    <div class="priceChange">
+      <p class="newPrice">2414 DKK</p>
+      <p class="originalPrice">3499 DKK</p>
+    </div>
+  </article>
+</template>
