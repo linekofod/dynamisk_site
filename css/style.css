@@ -158,12 +158,12 @@ nav a:hover {
     margin: 3px 0;
 }
 
-.productListBrand {
+.productlistBrand {
     color: grey;
     padding-top: 8px;
 }
 
-.productListName {
+.productlistName {
     font-size: 1.2rem;
 }
 

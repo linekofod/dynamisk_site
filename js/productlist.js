@@ -1,42 +1,64 @@
-window.addEventListener("DOMContentLoaded", init);
+const productsURL = "https://kea-alt-del.dk/t7/api/products";
 
-const productsURL = "https://kea-alt-del.dk/t7/api/products?limit=50&start=10";
-
+// Definerer variabler
 let productTemplate;
 let productList;
+let productClone;
 
-function init() {
-  console.log("init");
+// Fetcher dataen fra url'en
+fetch(productsURL)
+.then((response) => response.json())
+.then(showProducts);
 
-  productTemplate = document.querySelector(".productTemplate");
-  console.log("productTemplate", productTemplate);
-
-  productList = document.querySelector(".productList");
-  console.log("productList", productList);
-
-  fetch(productsURL)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (json) {
-      showProducts(json);
-    });
+function showProducts(products) {
+  // Looper og kalder funktion showProduct
+  products.forEach(showProduct);
 }
 
-function showProducts(productJSON) {
-    let productClone;
-  
-    productJSON.forEach((product) => {
-      console.log("Product", product);
-      productClone = productTemplate.cloneNode(true).content;
-      productClone.querySelector(".productlistBrand").textContent = product.brandname;
-      productClone.querySelector(".productlistName").textContent = product.productdisplayname;
-      productClone.querySelector(".originalPrice").textContent = product.price;
-      // productClone.querySelector("img").src = product.id;
-    //   
-    //   beerClone.querySelector(".beer_image").alt = `Picture of a ${beer.name} beer`;
-    //   beerClone.querySelector(".beer_tagline").textContent = beer.tagline;
-    //   beerClone.querySelector(".beer_description").textContent = beer.description;
-      productList.appendChild(productClone);
-    });
+function showProduct(product) {
+  console.log(product);
+  // Fang element 
+  productTemplate = document.querySelector(".productTemplate").content;
+
+  // Lav en kopi
+  productClone = productTemplate.cloneNode(true);
+
+  // Ændre indhold
+  productClone.querySelector(".productlistBrand").textContent = product.brandname;
+  productClone.querySelector(".productlistName").textContent = product.productdisplayname;
+  productClone.querySelector(".productlistPrice").textContent = `${product.price} DKK`;
+
+  if (product.soldout) {
+    // Produktet er udsolgt
+    productClone.querySelector("article").classList.add("soldOut");
   }
+
+  // Appende
+  productList = document.querySelector(".productList");
+  productList.appendChild(productClone);
+}
+
+
+
+{/* <article class="productCard" href="produkt.html">
+    <img src="https://kea-alt-del.dk/t7/images/webp/640/1532.webp" alt="" />
+    <p class="productlistBrand">Puma</p>
+    <p class="productlistName">Grey Leaping Cat T-shirt</p>
+    <p class="productPrice">899 DKK</p>
+  </article> */}
+
+// {
+//   "id": 1533,
+//   "gender": "Men",
+//   "category": "Apparel",
+//   "subcategory": "Topwear",
+//   "articletype": "Tshirts",
+//   "season": "Fall",
+//   "productionyear": 2010,
+//   "usagetype": "Casual",
+//   "productdisplayname": "Cat Red T-shirt",
+//   "price": 899,
+//   "discount": null,
+//   "brandname": "Puma",
+//   "soldout": 0
+// }
