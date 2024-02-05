@@ -199,6 +199,11 @@ nav a:hover {
 
 /* Sold out */
 
+.soldOut {
+    display: flex;
+    flex-direction: column;
+}
+
 .soldoutImg {
     position: relative;
 }
