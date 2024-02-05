@@ -22,26 +22,28 @@
     <main>
       <h1>Puma</h1>
       <section class="productList">
-        <article class="productCard onSale soldOut">
-          <a href="product.html">
-            <div class="soldoutImg">
-              <div class="lowOpacity">
-                <img
-                  src="https://kea-alt-del.dk/t7/images/webp/640/1542.webp"
-                  alt=""
-                />
+        <template class="productTemplate">
+          <article class="productCard onSale soldOut">
+            <a href="product.html">
+              <div class="soldoutImg">
+                <div class="lowOpacity">
+                  <img
+                    src="https://kea-alt-del.dk/t7/images/webp/640/1542.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="soldoutBadge">Sold Out</div>
+                <div class="saleBadge">-31%</div>
               </div>
-              <div class="soldoutBadge">Sold Out</div>
-              <div class="saleBadge">-31%</div>
-            </div>
-            <p class="productlistBrand">Puma</p>
-            <p class="productlistName">Ballistic Rubber Shoe</p>
-            <div class="priceChange">
-              <p class="newPrice">2414 DKK</p>
-              <p class="originalPrice">3499 DKK</p>
-            </div></a
-          >
-        </article>
+              <p class="productlistBrand">Puma</p>
+              <p class="productlistName">Ballistic Rubber Shoe</p>
+              <div class="priceChange">
+                <p class="newPrice">2414 DKK</p>
+                <p class="price">3499 DKK</p>
+              </div></a
+            >
+          </article></template
+        >
 
         <!-- <template class="productTemplate">
           <article class="productCard">

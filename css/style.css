@@ -173,7 +173,7 @@ nav a:hover {
     color: red;
 }
 
-.originalPrice {
+.price {
     color: gray;
     text-decoration: line-through;
 }
@@ -484,3 +484,22 @@ select {
     }
 }
 
+
+/* Produkt uden tilbud og udsolgt */
+
+.productCard .newPrice {
+    display: none;
+}
+
+.productCard .price {
+    color: black;
+    text-decoration: none;
+}
+
+.productCard .saleBadge, .soldoutBadge{
+    display: none;
+}
+
+.productCard .lowOpacity {
+    opacity: 100%;
+}
