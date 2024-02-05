@@ -1,4 +1,4 @@
-const productsURL = "https://kea-alt-del.dk/t7/api/products";
+const productsURL = "https://kea-alt-del.dk/t7/api/products?brandname=puma";
 
 // Definerer variabler
 let productTemplate;
@@ -27,6 +27,9 @@ function showProduct(product) {
   productClone.querySelector(".productlistBrand").textContent = product.brandname;
   productClone.querySelector(".productlistName").textContent = product.productdisplayname;
   productClone.querySelector(".productlistPrice").textContent = `${product.price} DKK`;
+  productClone.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
+
+  productClone.querySelector("a").href = `product.html?id=${product.id}`
 
   if (product.soldout) {
     // Produktet er udsolgt
