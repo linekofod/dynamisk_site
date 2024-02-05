@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Productlist</title>
+  </head>
+  <body>
+    <header class="mainNav">
+      <a href="index.html">
+        <h1>SPORTY<span>spice</span></h1>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="kategori.html">Categories</a></li>
+          <li><a href="#">Brands</a></li>
+          <li><a href="#">Seasons</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Puma</h1>
+      <section class="productList"></section>
+    </main>
+    <footer></footer>
+    <script src="js/productlist.js"></script>
+  </body>
+</html>
+
+<template class="productTemplate">
+  <article class="productCard onSale soldOut" href="produkt.html">
+    <div class="soldoutImg">
+      <div class="lowOpacity">
+        <img src="https://kea-alt-del.dk/t7/images/webp/640/1542.webp" alt="" />
+      </div>
+      <div class="soldoutBadge">Sold Out</div>
+      <div class="saleBadge">-31%</div>
+    </div>
+    <p class="productlistBrand">Puma</p>
+    <p class="productlistName">Ballistic Rubber Shoe</p>
+    <div class="priceChange">
+      <p class="newPrice">2414 DKK</p>
+      <p class="originalPrice">3499 DKK</p>
+    </div>
+  </article>
+</template>
