@@ -1,4 +1,4 @@
-const productsURL = "https://kea-alt-del.dk/t7/api/products";
+const productsURL = "https://kea-alt-del.dk/t7/api/products?brandname=puma";
 
 // Definerer variabler
 let productTemplate;
