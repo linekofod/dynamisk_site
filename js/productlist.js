@@ -1,4 +1,4 @@
-const productsURL = "https://kea-alt-del.dk/t7/api/products?brandname=puma";
+const productsURL = "https://kea-alt-del.dk/t7/api/products";
 
 // Definerer variabler
 let productTemplate;
@@ -11,7 +11,7 @@ fetch(productsURL)
 .then(showProducts);
 
 function showProducts(products) {
-  // Looper og kalder funktion showProduct
+  // Looper og kalder funktionen showProduct
   products.forEach(showProduct);
 }
 
@@ -29,39 +29,34 @@ function showProduct(product) {
   productClone.querySelector(".productlistPrice").textContent = `${product.price} DKK`;
   productClone.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
 
+  // Man går til den rigtige produktoversigt, når man klikker på et produkt på produktlisten.
   productClone.querySelector("a").href = `product.html?id=${product.id}`
 
+  // Produktet er udsolgt
   if (product.soldout) {
-    // Produktet er udsolgt
-    productClone.querySelector("article").classList.add("soldOut");
+    // Tilføjer klassen soldOut og fjerner klassen hide, så man kan se soldOut stylingen.
+    productClone.querySelector(".productCard").classList.add("soldOut");
+    productClone.querySelector(".soldoutBadge").classList.remove("hide");
+  }
+
+  // Produktet er på udsalg
+  if (product.discount) {
+    // Fjerner klassen hide til de nye priser, og tilføjer klassen hide fra den gamele pris, så man kun kan se stylingen af prisændringerne.
+    productClone.querySelector(".newPrice").classList.remove("hide");
+    productClone.querySelector(".originalPrice").classList.remove("hide");
+    productClone.querySelector(".productlistPrice").classList.add("hide");
+
+    // Ændrer indholdet af priserne så det er dynamisk. Og på den nye pris, trækker jeg rabatprocenten fra.
+    productClone.querySelector(".newPrice").textContent = `${(product.price - product.discount / 100 * product.price).toFixed(0)} DKK`;
+    productClone.querySelector(".originalPrice").textContent = `${product.price} DKK`;
+
+    // Fjerne klassen hide, så man nu kan se procent on sale mærket. 
+    productClone.querySelector(".saleBadge").classList.remove("hide");
+    // Ændrer indholdet 
+    productClone.querySelector(".saleBadge").textContent = `${product.discount} %`;
   }
 
   // Appende
   productList = document.querySelector(".productList");
   productList.appendChild(productClone);
 }
-
-
-
-{/* <article class="productCard" href="produkt.html">
-    <img src="https://kea-alt-del.dk/t7/images/webp/640/1532.webp" alt="" />
-    <p class="productlistBrand">Puma</p>
-    <p class="productlistName">Grey Leaping Cat T-shirt</p>
-    <p class="productPrice">899 DKK</p>
-  </article> */}
-
-// {
-//   "id": 1533,
-//   "gender": "Men",
-//   "category": "Apparel",
-//   "subcategory": "Topwear",
-//   "articletype": "Tshirts",
-//   "season": "Fall",
-//   "productionyear": 2010,
-//   "usagetype": "Casual",
-//   "productdisplayname": "Cat Red T-shirt",
-//   "price": 899,
-//   "discount": null,
-//   "brandname": "Puma",
-//   "soldout": 0
-// }

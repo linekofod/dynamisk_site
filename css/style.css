@@ -144,6 +144,14 @@ nav a:hover {
 
 /* Prouktlist siden */
 
+.hide {
+    display: none;
+}
+
+.imgPosition {
+    position: relative;
+}
+
 .productList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 290px));
@@ -153,6 +161,7 @@ nav a:hover {
 .productCard {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 .productCard p {
     margin: 3px 0;
@@ -169,6 +178,12 @@ nav a:hover {
 
 /* On sale */
 
+.onSale {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 .newPrice {
     color: red;
 }
@@ -178,15 +193,6 @@ nav a:hover {
     text-decoration: line-through;
 }
 
-.priceChange {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-.saleImg {
-    position: relative;
-}
 .saleBadge {
     position: absolute;
     bottom: 10px;
@@ -199,13 +205,10 @@ nav a:hover {
 
 /* Sold out */
 
-.soldoutImg {
-    position: relative;
+.soldOut img {
+    opacity: 50%;
 }
 
-.lowOpacity {
-    opacity: 0.5;
-}
 .soldoutBadge {
     position: absolute;
     top: 10px;
@@ -483,24 +486,4 @@ select {
         text-align: center;
         margin-top: 20px;
     }
-}
-
-
-/* Produkt uden tilbud og udsolgt */
-
-.productCard .newPrice {
-    display: none;
-}
-
-.productCard .price {
-    color: black;
-    text-decoration: none;
-}
-
-.productCard .saleBadge, .soldoutBadge{
-    display: none;
-}
-
-.productCard .lowOpacity {
-    opacity: 100%;
 }
