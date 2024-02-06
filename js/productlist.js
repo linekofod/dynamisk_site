@@ -35,7 +35,7 @@ function showProduct(product) {
   // Produktet er udsolgt
   if (product.soldout) {
     // Tilføjer klassen soldOut og fjerner klassen hide, så man kan se soldOut stylingen.
-    productClone.querySelector(".productCard").classList.add("soldOut");
+    productClone.querySelector(".soldOut").classList.add("lowOpacity");
     productClone.querySelector(".soldoutBadge").classList.remove("hide");
   }
 
@@ -53,7 +53,7 @@ function showProduct(product) {
     // Fjerne klassen hide, så man nu kan se procent on sale mærket. 
     productClone.querySelector(".saleBadge").classList.remove("hide");
     // Ændrer indholdet 
-    productClone.querySelector(".saleBadge").textContent = `${product.discount} %`;
+    productClone.querySelector(".saleBadge").textContent = `- ${product.discount} %`;
   }
 
   // Appende

@@ -22,4 +22,28 @@ function showProduct(product) {
   // Ændre indhold i breadcrumbs
   document.querySelector(".breadcrumbs li:nth-child(3)").textContent = product.brandname;
 
+  // Produktet er udsolgt
+  if (product.soldout) {
+    // Tilføjer klassen soldOut og fjerner klassen hide, så man kan se soldOut stylingen.
+    document.querySelector(".soldOut").classList.add("lowOpacity");
+    document.querySelector(".soldoutBadge2").classList.remove("hide");
+  }
+
+  // Produktet er på udsalg
+  if (product.discount) {
+    // Fjerner klassen hide til de nye priser, og tilføjer klassen hide fra den gamele pris, så man kun kan se stylingen af prisændringerne.
+    document.querySelector(".newPrice2").classList.remove("hide");
+    document.querySelector(".originalPrice2").classList.remove("hide");
+    document.querySelector(".productPrice").classList.add("hide");
+
+    // Ændrer indholdet af priserne så det er dynamisk. Og på den nye pris, trækker jeg rabatprocenten fra.
+    document.querySelector(".newPrice2").textContent = `${(product.price - product.discount / 100 * product.price).toFixed(0)} DKK`;
+    document.querySelector(".originalPrice2").textContent = `${product.price} DKK`;
+
+    // Fjerne klassen hide, så man nu kan se procent on sale mærket. 
+    document.querySelector(".saleBadge2").classList.remove("hide");
+    // Ændrer indholdet 
+    document.querySelector(".saleBadge2").textContent = `- ${product.discount} %`;
+  }
+
 }
