@@ -443,6 +443,10 @@ select {
         justify-content: center;
         display: block;
     }
+
+    .productCard {
+        margin-bottom: 30px;
+    }
     
     .productCard p {
         margin: 2px 0;
@@ -487,6 +491,14 @@ select {
         margin: 5px 0;
     }
     .productPrice {
+        font-size: 1.2em;
+    }
+
+    .newPrice2 {
+        font-size: 1.2em;
+    }
+
+    .originalPrice2 {
         font-size: 1.2em;
     }
 
