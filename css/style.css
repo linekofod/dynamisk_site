@@ -185,7 +185,7 @@ nav a:hover {
 }
 
 .newPrice {
-    color: red;
+    color: #f30038;
 }
 
 .originalPrice {
@@ -197,7 +197,7 @@ nav a:hover {
     position: absolute;
     bottom: 10px;
     left: 10px;
-    background-color: red;
+    background-color: #f30038;
     padding: 3px 7px;
     color: white;
     font-family: 'Times New Roman', Times, serif;
@@ -279,7 +279,7 @@ nav a:hover {
 /* On sale */
 
 .newPrice2 {
-    color: red;
+    color: #f30038;
     font-size: 1.5em;
     margin: 0;
 }
@@ -295,7 +295,7 @@ nav a:hover {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: red;
+    background-color: #f30038;
     padding: 3px 7px;
     color: white;
     font-family: 'Times New Roman', Times, serif;
