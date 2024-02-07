@@ -20,15 +20,18 @@ function showCategory(category) {
     console.log(category);
 
     // Fang element 
-    categoryTemplate = document.querySelector(".categoryTemplate").content;
+    categoryTemplate = document.querySelector("template").content;
 
     // Lav en kopi
     categoryClone = categoryTemplate.cloneNode(true);
 
     // Ændre indhold
+    categoryClone.querySelector("a").textContent = category.category;
 
+    // Man går til den rigtige kategorioversigt, når man klikker på en kategori på kategorisiden.
+    categoryClone.querySelector("a").href = `productlist.html?category=${category.category}`
 
     // Appende
     categories = document.querySelector(".categories");
-    categories.appendChild(productClone);
+    categories.appendChild(categoryClone);
 }

@@ -1,20 +1,35 @@
-const urlParams = new URLSearchParams(window.location.search);
-const category = urlParams.get("category");
-
 // Definerer variabler
-const productsURL = `https://kea-alt-del.dk/t7/api/products?category=${category}`;
-let productTemplate;
-let productList;
-let productClone;
+const productsURL = "https://kea-alt-del.dk/t7/api/products";
+let menuTemplate;
+let menu;
+let menuClone;
 
-// Fetcher dataen fra url'en
+// Fetcher dataen fra URL'en
 fetch(productsURL)
 .then((response) => response.json())
 .then(showProducts);
 
 function showProducts(products) {
-  // Looper og kalder funktionen showProduct
-  products.forEach(showProduct);
+    // Looper og kalder funktionen showProduct
+    products.forEach(showProduct);
+}
+
+function showProduct(product) {
+    // Fang element 
+    menuTemplate = document.querySelector("template").content;
+
+    // Lav en kopi
+    menuClone = menuTemplate.cloneNode(true);
+
+    // Ændre indhold
+    menuClone.querySelector("menu").textContent = "All products";
+
+    // Man går til den rigtige kategorioversigt, når man klikker på en kategori på kategorisiden.
+    menuClone.querySelector("a").href = `productlist.html?category=${category.category}`
+
+    // Appende
+    menu = document.querySelector(".menu a");
+    menu.appendChild(menuClone);
 }
 
 function showProduct(product) {

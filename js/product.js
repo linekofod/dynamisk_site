@@ -20,7 +20,10 @@ function showProduct(product) {
   document.querySelector(".colorImg img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
 
   // Ændre indhold i breadcrumbs
-  document.querySelector(".breadcrumbs li:nth-child(3)").textContent = product.brandname;
+  document.querySelector(".breadcrumbs li:nth-child(3) a").textContent = product.category;
+  document.querySelector(".breadcrumbs li:nth-child(3) a").href = `productlist.html?category=${product.category}`
+  document.querySelector(".breadcrumbs li:nth-child(4)").textContent = product.brandname;
+  document.querySelector(".breadcrumbs li:nth-child(5)").textContent = product.productdisplayname;
 
   // Produktet er udsolgt
   if (product.soldout) {
