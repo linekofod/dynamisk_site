@@ -1,6 +1,5 @@
-const productsURL = "https://kea-alt-del.dk/t7/api/products?limit=20&start=3";
-
 // Definerer variabler
+const productsURL = "https://kea-alt-del.dk/t7/api/products?limit=20&start=3";
 let productTemplate;
 let productList;
 let productClone;
@@ -60,3 +59,6 @@ function showProduct(product) {
   productList = document.querySelector(".productList");
   productList.appendChild(productClone);
 }
+
+
+
