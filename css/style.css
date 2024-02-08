@@ -127,7 +127,7 @@ nav a:hover {
 .dropdownContent {
     display: none;
     position: absolute;
-    background-color: #f4efe6;
+    background-color: #f9f8f5;
     padding: 10px;
     border-radius: 3px;
     min-width: 190px;
@@ -144,7 +144,7 @@ ul li:nth-child(2) .dropdownContent {
     font-size: 1.1rem;
 }
 .dropdownContent a:hover {
-    background-color: #e8e2d7;
+    background-color: #f4efe6;
     border-bottom: none;
 }
 .dropdown:hover .dropdownContent {
